@@ -4,64 +4,289 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Christopher's - Portfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-    h1, h2 { margin-bottom: 10px; }
-    section { margin-bottom: 30px; }
-    ul { padding-left: 20px; }
+    <style>
+    :root {
+      --bg: #0f172a;        /* dark blue/grey background */
+      --card: #1e293b;      /* slightly lighter panels */
+      --accent: #38bdf8;    /* light blue accent */
+      --text: #e5e7eb;      /* light text */
+      --muted: #9ca3af;    /* softer text */
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 60%);
+      color: var(--text);
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .page {
+      max-width: 900px;
+      width: 100%;
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+      padding: 28px 24px 32px;
+    }
+
+    header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+      padding-bottom: 18px;
+    }
+
+    .name {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
+    .tagline {
+      margin-top: 6px;
+      font-size: 0.98rem;
+      color: var(--text);
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .chip {
+      font-size: 0.8rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      color: var(--muted);
+    }
+
+    .chip.primary {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.08);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+      gap: 20px;
+    }
+
+    section {
+      margin-bottom: 18px;
+    }
+
+    .section-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 12px 14px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    h3 {
+      margin: 0 0 6px;
+      font-size: 1rem;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 18px;
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    p {
+      margin: 0 0 6px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-pill {
+      font-size: 0.8rem;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .contact {
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+
+    .contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 22px 18px 26px;
+      }
+
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .name {
+        font-size: 1.9rem;
+      }
+    }
   </style>
 </head>
 <body>
-  <section id="hero">
-    <h1>Christopher Owusu Appiah Asimeng</h1>
-    <p>22-year-old freight forwarding apprentice at DHL in Hamburg, building simple websites and starting my career in logistics.</p>
-  </section>
+  <div class="page">
+    <header>
+      <div class="name">Christopher Owusu Appiah Asimeng</div>
+      <div class="subtitle">Freight forwarding apprentice at DHL · Hamburg</div>
+      <div class="tagline">
+        22-year-old freight forwarding apprentice at DHL in Hamburg, building simple websites for myself and my friends and starting my career in logistics.
+      </div>
+      <div class="chip-row">
+        <span class="chip primary">Freight forwarding & logistics</span>
+        <span class="chip">Part-time work experience</span>
+        <span class="chip">Basic HTML & CSS</span>
+        <span class="chip">German · English</span>
+      </div>
+    </header>
 
-  <section id="about">
-    <h2>About me</h2>
-    <p>I recently started my Ausbildung at DHL as a freight forwarding agent. During school I worked part-time in different jobs, which taught me responsibility, customer service and teamwork. In my free time I create small websites and Design Art for myself and my friends and like to learn new tools step by step.</p>
-  </section>
+    <main>
+      <!-- Left column: About + Experience + Projects -->
+      <div>
+        <section id="about">
+          <div class="section-title">About me</div>
+          <div class="card">
+            <p>
+              I grew up in Ghana and  finished my BECE, then moved to Germany.i continued school in germany til fach abi . During school I worked part-time,
+              learned how to deal with customers, handle late shifts and stay reliable.
+              I started my Ausbildung at DHL as a freight forwarding agent because
+              I like organizing, planning and making sure things arrive where they should.
+            </p>
+            <p>
+              In my free time I create small websites for myself and my friends and explore
+              simple tech tools step by step.
+            </p>
+          </div>
+        </section>
 
-  <section id="experience">
-    <h2>Experience</h2>
-    <h3>DHL Freight Forwarding Apprentice – Hamburg (08/2026 – present)</h3>
-    <ul>
-      <li>Learning international freight processes and documentation.</li>
-      <li>Supporting shipment tracking and communication with partners.</li>
-      <li>Building a foundation in logistics, planning and customer service.</li>
-    </ul>
+        <section id="experience">
+          <div class="section-title">Experience</div>
 
-    <h3>Part-time roles during school</h3>
-    <ul>
-      <li>Served customers during busy shifts and handled payments.</li>
-      <li>Worked evenings and weekends while finishing school.</li>
-      <li>Helped keep the workplace clean, stocked and organized.</li>
-    </ul>
-  </section>
+          <div class="card" style="margin-bottom: 10px;">
+            <h3>DHL Freight Forwarding Apprentice</h3>
+            <div class="meta">DHL · Hamburg · 08/2026 – present</div>
+            <ul>
+              <li>Learning international freight processes and documentation.</li>
+              <li>Supporting shipment tracking and communication with partners.</li>
+              <li>Building a foundation in logistics, planning and customer service.</li>
+            </ul>
+          </div>
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <h3>lovable / VS Code / GitHub</h3>
-    <p>Simple site where I introduce myself and share my interests and links. Built with basic HTML and CSS.</p>
+          <div class="card">
+            <h3>Part-time roles during school</h3>
+            <div class="meta">Various customer-facing jobs</div>
+            <ul>
+              <li>Served customers during busy shifts and handled cash/card payments.</li>
+              <li>Worked evenings and weekends while finishing school.</li>
+              <li>Helped keep workplaces clean, stocked and organized.</li>
+            </ul>
+          </div>
+        </section>
 
-    <h3>Lumin</h3>
-    <p>A small site I created so my friends and I can login my semester paln, class schedules, assignments, deadlines, pomodoro timer, study analytics and many more useful links and notes in one place.</p>
-  </section>
+        <section id="projects">
+          <div class="section-title">Projects</div>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Customer service and teamwork.</li>
-      <li>Basic HTML/CSS and simple website setup.</li>
-      <li>Office tools (Word, Excel).</li>
-      <li>German and English communication.</li>
-    </ul>
-  </section>
+          <div class="card" style="margin-bottom: 10px;">
+            <h3>Personal homepage</h3>
+            <div class="meta">Simple HTML/CSS site</div>
+            <p>
+              A small site where I introduce myself, share my interests and link to my profiles.
+              Built with basic HTML and CSS to practice layout and styling.
+            </p>
+          </div>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: caawusu246@gmail.com</p>
-    <p>Location: Hamburg, Germany</p>
-  </section>
+          <div class="card">
+            <h3>Lumin</h3>
+            <div class="meta">Private site for friends</div>
+            <p>
+              A small site I created so my friends and I can login my semester paln, class schedules, assignments, deadlines, pomodoro timer, study analytics and also lightweight page my friends and I use to collect useful links, notes and plans
+              in one place. It keeps everything organized instead of spread across chats.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right column: Skills + Contact -->
+      <div>
+        <section id="skills">
+          <div class="section-title">Skills</div>
+          <div class="card">
+            <div class="skills-list">
+              <span class="skill-pill">Customer service</span>
+              <span class="skill-pill">Teamwork</span>
+              <span class="skill-pill">Basic HTML & CSS</span>
+              <span class="skill-pill">Simple website setup</span>
+              <span class="skill-pill">Microsoft Office</span>
+              <span class="skill-pill">German (native)</span>
+              <span class="skill-pill">English (good working level)</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact">
+          <div class="section-title">Contact</div>
+          <div class="card">
+            <div class="contact">
+              <p>Email: <a href="mailto:your.email@example.com">caawusu246@gmail.com</a></p>
+              <p>Location: Hamburg, Germany</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
 </body>
 </html>
